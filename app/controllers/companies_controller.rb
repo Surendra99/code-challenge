@@ -12,6 +12,15 @@ class CompaniesController < ApplicationController
   def show
   end
 
+  def destroy
+    name = @company.name
+    if @company.delete
+      redirect_to companies_path, notice: "#{name} has been deleted"
+    else
+      redirect_to company_path, notice: "Error"
+    end
+  end
+
   def create
     @company = Company.new(company_params)
     if @company.save
