@@ -20,6 +20,7 @@
       <div class="col-lg offset-lg-1">
         <div class="form-group">
           <%= f.text_field :zip_code, class: "form-control", placeholder: "93003", required: true %>
+          <label style="color: red"><%= @company.errors[:zip_code].compact.join(',') %></label>
         </div>
       </div>
     </div>
@@ -54,6 +55,7 @@
       <div class="col-lg offset-lg-1">
         <div class="form-group">
           <%= f.text_field :email, class: "form-control", placeholder: "hello@company.com"%>
+          <label style="color: red"><%= @company.errors[:email].compact.join(',') %></label>
         </div>
       </div>
     </div>
