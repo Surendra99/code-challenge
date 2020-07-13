@@ -17,7 +17,7 @@ class CompaniesController < ApplicationController
     if @company.delete
       redirect_to companies_path, notice: "#{name} has been deleted"
     else
-      redirect_to company_path, notice: "Error"
+      redirect_to company_path, notice: "Something went wrong"
     end
   end
 

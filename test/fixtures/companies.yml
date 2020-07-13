@@ -3,6 +3,7 @@ hometown_painting:
   email: "hometown_painting@hometown_painting.com"
   zip_code: "93003"
   phone: "555-808-8888"
+  city: "NewYork, TN"
 
 wolf_painting:
   name: "Wolf Painting"
