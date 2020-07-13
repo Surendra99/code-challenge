@@ -15,16 +15,16 @@ class CompaniesController < ApplicationController
   def destroy
     name = @company.name
     if @company.delete
-      redirect_to companies_path, notice: "#{name} has been deleted"
+      redirect_to companies_path, notice: I18n.t('company.successfully_deleted', name: name)
     else
-      redirect_to company_path, notice: "Something went wrong"
+      redirect_to company_path, notice: I18n.t('error')
     end
   end
 
   def create
     @company = Company.new(company_params)
     if @company.save
-      redirect_to companies_path, notice: "Saved"
+      redirect_to companies_path, notice: I18n.t('saved')
     else
       render :new
     end
@@ -35,7 +35,7 @@ class CompaniesController < ApplicationController
 
   def update
     if @company.update(company_params)
-      redirect_to companies_path, notice: "Changes Saved"
+      redirect_to companies_path, notice: I18n.t('changes_saved')
     else
       render :edit
     end
