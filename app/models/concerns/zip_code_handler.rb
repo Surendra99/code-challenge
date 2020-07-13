@@ -1,14 +1,11 @@
-module CompanyConcern
+module ZipCodeHandler
     extend ActiveSupport::Concern
     
     included do 
-        validates :email, format: { with: /\A[A-Za-z0-9._%+-]+@getmainstreet.com\z/, 
-                              message: I18n.t('company.invalid_email'), allow_blank: true}
-
-        validate :zip_code_should_be_valid
-
         before_save :update_city_and_state
+        validate :zip_code_should_be_valid
     end
+    
 
     private
     def zip_code_should_be_valid
