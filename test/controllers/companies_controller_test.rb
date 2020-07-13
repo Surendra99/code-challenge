@@ -93,7 +93,7 @@ class CompaniesControllerTest < ApplicationSystemTestCase
     accept_confirm do
       click_link "Delete"
     end
-    assert_text "#{name} has been deleted"
+    assert_text I18n.t('company.successfully_deleted', name: name)
     assert Company.find_by_id(@company.id).nil?
   end
 
